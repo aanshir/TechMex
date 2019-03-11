@@ -7,14 +7,10 @@
     box-sizing: border-box;
 }
 
-#todo-table form:after{
-    margin: 0;
-    content: '';
-    display: block;
-    clear: both;
-}
 
-input[type="text"]{
+
+input[type="text"],
+input[type="tel"]{
     width: 70%;
     padding: 20px;
     background:#181c22;

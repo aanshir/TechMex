@@ -18,6 +18,7 @@ include_once 'dbh.inc.php';
 	<![endif]-->
 </head>
 <body>
+	<?php $result = exec("python test.py '1'"); $arr = json_decode($result); ?>
 	<div id="wrapper">
 		<div class="wrapper-holder">
 			<header id="header">
@@ -26,7 +27,7 @@ include_once 'dbh.inc.php';
 						<ul>
 							<li><a class="active" href="profile.php">Home</a></li>
 							<li><a href="modify.php">MODIFY</a></li>
-							<li><a href="Contact.html">CONTACTS</a></li>
+							<li><a href="Contact.php">CONTACTS</a></li>
 							<li><a href="logout.php">LOGOUT</a></li>
 						</ul>
 					</nav>
@@ -39,22 +40,22 @@ include_once 'dbh.inc.php';
 				<h2>OVERVIEW OF <?php echo $_SESSION['city']; ?> ,<?php echo $_SESSION['state']; ?></h2>
 				<div class="skills_holder">
 					<div class="column">
-						<h2>ESTIMATED RISKS:</h2>
+						<h2>RISKY PLACES:</h2>
 						<ul class="progress">
-							<li><span class="photoshop">Photoshop</span></li>
-							<li><span class="illustrator">Illustrator</span></li>
-							<li><span class="indesign">InDesign</span></li>
-							<li><span class="flash">Flash</span></li>
+							<li><span style="width:<?php echo $arr[0][1]; ?>%"><?php echo $arr[0][0]; ?></span></li>
+							<li><span style="width:<?php echo $arr[1][1]; ?>%"><?php echo $arr[1][0]; ?></span></li>
+							<li><span style="width:<?php echo $arr[2][1]; ?>%"><?php echo $arr[2][0]; ?></span></li>
+							<li><span style="width:<?php echo $arr[3][1]; ?>%"><?php echo $arr[3][0]; ?></span></li>
 						</ul>
 					</div>
 					<div class="column column-add">
-						<h2>RISKY PLACES:</h2>
+						<h2></h2><br>
 						
 						<ul class="progress">
-							<li><span class="html">html</span></li>
-							<li><span class="wordpress">Wordpress</span></li>
-							<li><span class="jquery">jQuery</span></li>
-							<li><span class="seo">SEO</span></li>
+							<li><span style="width:<?php echo $arr[4][1]; ?>%"><?php echo $arr[4][0]; ?></span></li>
+							<li><span style="width:<?php echo $arr[5][1]; ?>%"><?php echo $arr[5][0]; ?></span></li>
+							<li><span style="width:<?php echo $arr[6][1]; ?>%"><?php echo $arr[6][0]; ?></span></li>
+							<li><span style="width:<?php echo $arr[7][1]; ?>%"><?php echo $arr[7][0]; ?></span></li>
 						</ul>
 					</div>
 				</div>
@@ -80,8 +81,6 @@ include_once 'dbh.inc.php';
 					<li class="li_7"><a href="#">jq</a></li>
 					<li class="li_8"><a href="#">seo</a></li>
 				</ul>
-				<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa.</p>
-				<p>Qui officia deserunt mollitia animi, id est laborum et dolorum fuga. <span>Et harum quidem rerum facilis est et expedita distinctio</span> . Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.</p>
 			</section>
 		</div>
 	</div>

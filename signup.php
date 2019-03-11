@@ -27,7 +27,7 @@
 			</div>
 			<div class="agile-field-txt">
 				<label> password</label>
-				<input type="password" name="password" placeholder="Enter Password" required="" id="myInput" />
+				<input type="password" name="password" placeholder="Enter Password" required="" id="myInput" required=""/>
 				<div class="agile_label">
 					<input id="check3" name="check3" type="checkbox" value="show password" onclick="myFunction()">
 					<label class="check" for="check3">Show password</label>

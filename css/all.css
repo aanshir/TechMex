@@ -267,21 +267,9 @@ h2.slogan{
 	font-family: 'novecentosanswide';
 	font-weight: normal;
 	font-size: 18px;
-	padding: 0 0 0 20px;
+	
 }
-.progress li span.photoshop{width: 100%;}
-.progress li span.illustrator{width: 70%;}
-.progress li span.indesign{width: 40%;}
-.progress li span.flash{width: 80%;}
-.progress li span.html{width: 75%;}
-.progress li span.wordpress{width: 85%;}
-.progress li span.jquery{width: 70%;}
-.progress li span.seo{width: 40%;}
-.plagin_list{
-	width: 100%;
-	overflow: hidden;
-	margin: 0 0 65px;
-}
+
 .plagin_list li{
 	float:left;
 	margin: 0 0 0 25px;
