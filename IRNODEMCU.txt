@@ -1,0 +1,64 @@
+#include <ESP8266WiFi.h>
+
+const char* ssid     = "red";
+const char* password = "12345678";
+
+const char* server = "api.thingspeak.com";
+
+
+String apiWritekey = "YJVLK9NHNW76C5V4";
+WiFiClient client;
+
+void setup() {
+  Serial.begin(115200);
+  WiFi.disconnect();
+  delay(10);
+  WiFi.begin(ssid,password);
+  Serial.println();
+
+  WiFi.begin(ssid,password);
+  
+
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.print(".");
+  }
+
+  Serial.println("");
+  Serial.println("WiFi connected");
+  Serial.println(ssid);
+  Serial.println();
+  }
+  void loop()
+  {
+
+  float value=analogRead(D7);
+  if(client.connect(server,80))
+  {
+  String urll= apiWritekey;
+  urll += "&field1=";
+  urll += String(value);
+  urll+="\r\n\r\n";
+  
+
+
+  client.print("POST/updateHTTP/1.1\n");
+   
+  client.print("Host:api.thingspeak.com");
+   
+  client.print("connection closed");
+   
+  client.print("apikey"+ apiWritekey +"\n");
+
+  client.print(urll.length());
+  client.print(urll);
+
+  Serial.print(value);
+  }
+  client.stop();
+
+  Serial.println();
+  delay(15000);
+  }
+  
+ 
